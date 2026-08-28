@@ -23,8 +23,6 @@ allowed-tools: Read, Write, Edit, WebSearch, WebFetch
 
 头号一手样本是 2026-08-27 那篇《我的女友景甜》（全文在 `references/jingtian-essay.md`）。
 
-前作参照：[sun-yuchen-perspective](https://github.com/alchaincyf/sun-yuchen-perspective)、[sun-skill](https://github.com/0xquqi/sun-skill) 把「大脑」做得深而全；孙割不比大脑厚度，比的是三样合一——尤其那两个都没覆盖的写作与「长在故事里的决策」。
-
 ## 三种用法（先分清用哪种）
 
 | | 小作文体（冷·主打·写） | 发推/演讲体（热·写） | 决策提取/应用（孙学·想） |

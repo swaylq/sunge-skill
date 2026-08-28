@@ -81,10 +81,6 @@ He wasn't leaning on Claude for the math — that was already done. He was borro
 
 Four ready-made ([`examples/`](examples/), in Chinese): [*My Gym Card*](examples/01-my-gym-card.md) (the voice on the most ordinary thing) · [*My First 100x Coin*](examples/02-my-first-100x.md) (from the fleeced side) · [a Sun-ge hype thread](examples/03-hype-thread.md) · [the fifty-million call](examples/04-decision-5000w.md) (decision mode).
 
-## How it differs from the other two Justin Sun skills
-
-Two good Justin Sun skills already exist: [alchaincyf/sun-yuchen-perspective](https://github.com/alchaincyf/sun-yuchen-perspective) and [0xquqi/sun-skill](https://github.com/0xquqi/sun-skill). Both build the **mind** deep and complete (13–18 mental models from tens of thousands of tweets). sunge-skill doesn't compete on mind depth — its pitch is **three in one**: a serviceable mind, plus the **writing style** and the **decisions-inside-the-stories** that neither of the other two covers, welded together. Want to study how he thinks — those two are fuller. Want his thinking, writing, and deciding at once — install this. All three coexist fine.
-
 ## Red lines
 
 This lives in the gap between "apparently true" and "labeled fiction" — half the essay's force comes from that ambiguity, so the skill holds a few lines hard:
