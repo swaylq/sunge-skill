@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>孙割.skill —— 用孙宇晨的文风写作 + 决策 | 学《我的女友景甜》写小作文</title>
+<meta name="description" content="孙割.skill 把孙宇晨蒸成大脑、写作风格、决策能力三样，装进一个 Claude skill。给它一个题目，用他的笔写一篇冷到脊背发凉的小作文，就像那篇疯传的《我的女友景甜》；也能把故事里的关键决策抠出来。孙学 · 孙宇晨文风 · 开源 MIT。">
+<meta name="keywords" content="孙割,孙割skill,孙宇晨,景甜,我的女友景甜,孙宇晨文风,孙宇晨小作文,孙学,孙哥,Justin Sun,Claude skill,Claude Code,AI写作,文风模仿,仿写,小作文生成">
+<meta name="author" content="swaylq">
+<link rel="canonical" href="https://swaylq.github.io/sunge-skill/">
+<meta name="robots" content="index, follow">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="孙割.skill">
+<meta property="og:title" content="孙割.skill —— 用孙宇晨的文风写作 + 决策">
+<meta property="og:description" content="把孙宇晨蒸成大脑、写作、决策三样，装进一个 Claude skill。给它一个题目，用他的笔写一篇《我的女友景甜》那样的小作文。">
+<meta property="og:url" content="https://swaylq.github.io/sunge-skill/">
+<meta property="og:locale" content="zh_CN">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="孙割.skill —— 用孙宇晨的文风写作 + 决策">
+<meta name="twitter:description" content="把孙宇晨蒸成大脑、写作、决策三样，装进一个 Claude skill。学《我的女友景甜》写小作文。">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "孙割.skill",
+  "alternateName": ["sunge-skill", "孙宇晨文风 skill", "孙学 skill"],
+  "applicationCategory": "DeveloperApplication",
+  "operatingSystem": "Claude Code, Claude",
+  "description": "把孙宇晨蒸成大脑、写作风格、决策能力三样的 Claude skill。学《我的女友景甜》的文风写小作文，并提取关键决策。",
+  "url": "https://swaylq.github.io/sunge-skill/",
+  "codeRepository": "https://github.com/swaylq/sunge-skill",
+  "license": "https://opensource.org/licenses/MIT",
+  "author": {"@type": "Person", "name": "swaylq"},
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}
+}
+</script>
+
+<style>
+  :root{
+    --bg:#0c0c0e; --panel:#141417; --line:#26262b;
+    --ink:#ececec; --muted:#9a9aa2; --gold:#f5c542; --violet:#a07bff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Segoe UI",Roboto,sans-serif;
+    line-height:1.75;-webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:0 22px}
+  header{padding:86px 0 30px;text-align:center}
+  .logo{font-size:56px;line-height:1}
+  h1{font-size:40px;font-weight:800;letter-spacing:-.5px;margin:16px 0 6px}
+  .tag{color:var(--gold);font-size:18px;font-weight:600}
+  .sub{color:var(--muted);margin-top:16px;font-size:16px}
+  .cta{margin:30px 0 8px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .btn{
+    display:inline-block;padding:11px 20px;border-radius:10px;font-weight:600;
+    text-decoration:none;font-size:15px;border:1px solid var(--line);
+  }
+  .btn.primary{background:var(--gold);color:#141417;border-color:var(--gold)}
+  .btn.ghost{color:var(--ink)}
+  section{padding:38px 0;border-top:1px solid var(--line)}
+  h2{font-size:24px;font-weight:700;margin-bottom:14px}
+  p{color:#d6d6da;margin:12px 0}
+  .lead{font-size:18px;color:#e6e6ea}
+  .pillars{display:grid;gap:14px;margin-top:8px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px 22px}
+  .card h3{font-size:18px;margin-bottom:6px}
+  .card .k{color:var(--gold);font-weight:700}
+  .card p{margin:6px 0 0;color:var(--muted);font-size:15px}
+  blockquote{
+    background:var(--panel);border-left:3px solid var(--violet);
+    border-radius:0 10px 10px 0;padding:16px 20px;margin:16px 0;color:#dcdce2;
+  }
+  blockquote b{color:var(--gold)}
+  pre{
+    background:#08080a;border:1px solid var(--line);border-radius:12px;
+    padding:16px 18px;overflow:auto;margin:14px 0;
+  }
+  code{font-family:"SF Mono",Menlo,Consolas,monospace;font-size:13.5px;color:#e6e6ea}
+  a{color:var(--gold)}
+  .muted{color:var(--muted);font-size:14px}
+  footer{padding:44px 0 70px;text-align:center;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+  @media(max-width:560px){header{padding:60px 0 20px}h1{font-size:32px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="logo">🍌</div>
+  <h1>孙割.skill</h1>
+  <div class="tag">用孙宇晨的文风写作，还有他的脑子和决策</div>
+  <p class="sub">粉丝叫他孙哥，市场叫他孙割。这个 skill 把这个人蒸成三样，装进 Claude。</p>
+  <div class="cta">
+    <a class="btn primary" href="https://github.com/swaylq/sunge-skill">GitHub 仓库</a>
+    <a class="btn ghost" href="#install">怎么装</a>
+  </div>
+  <p class="muted">开源 · MIT · Claude Code / skills.sh 通用</p>
+</header>
+
+<section>
+  <p class="lead">2026 年 8 月，孙宇晨发了一篇《我的女友景甜》，一夜传疯。句子冷得像判决书，写的却是五千万美元、专机、和一个让男人改口叫「妈妈」的女人。每段都短，每段都往下压，最后一句是「什么都没有发生」。</p>
+  <p>好多人读完想学，学不像。它看着简单，其实每句背后都是一个准动作：把天价贴着一个小细节写，把心碎写成「心跳很稳」，让「我」从头顺从到尾，结尾绝不升华。孙割.skill 把这套写法拆成了十五个可复用的动作。给它一个题目，一个人、一件事、一张办了没去的健身卡，它照同一套机关还你一篇。</p>
+</section>
+
+<section>
+  <h2>蒸了哪三样</h2>
+  <div class="pillars">
+    <div class="card">
+      <h3>🧠 <span class="k">大脑</span> · 他怎么看世界</h3>
+      <p>增量胜过存量、赢家通吃、注意力就是能量、用管马车的法规管汽车。一套心智模型和世界观。</p>
+    </div>
+    <div class="card">
+      <h3>✍️ <span class="k">写作风格</span> · 他怎么写</h3>
+      <p>往冷了写，是《我的女友景甜》那种一句一段的小作文；往热了写，是他发推那种数字砸脸、火箭收尾的鼓吹。</p>
+    </div>
+    <div class="card">
+      <h3>🎯 <span class="k">决策能力</span> · 他怎么做决定</h3>
+      <p>把不敢做的决定丢给一个不带感情的系统替他拍板，把情绪调成自动驾驶，不决定其实也是一种决定。</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>一个决定长什么样</h2>
+  <p class="muted">取自《景甜》里最有名的两难，孙宇晨本人的口吻：</p>
+  <blockquote>
+    这五千万美元，给不给她？<br><br>
+    给了对我有没有影响，我算过。用 Claude Code 把所有现金资产跑了一遍，没有任何影响。所以这不是钱的事。<br>
+    我从来没有拒绝过她。不是慷慨，是害怕，害怕下一秒的答案。<br>
+    我把问题打进 Claude。我问要不要给，它说不要。我问她是不是不再爱我了，它说，对于爱情，我不关心，也不理解，但是你不能把这五千万给她。<br>
+    让我毛骨悚然的不是它算得对，是它一点犹豫都没有。<br>
+    那个「不」，我没说。我让它替我说了。<b>我听 AI 的。</b>
+  </blockquote>
+</section>
+
+<section id="install">
+  <h2>怎么装</h2>
+  <p>把整个 <code>sunge-skill</code> 目录丢进你的 skills 目录就行。</p>
+  <pre><code>git clone https://github.com/swaylq/sunge-skill.git
+cp -r sunge-skill ~/.claude/skills/</code></pre>
+  <p>用 skills.sh 的话，一句 <code>npx skills add swaylq/sunge-skill</code>。装好之后直接说人话：<span class="muted">「用孙宇晨的文风写写我的考研」「把这件事写成孙割体」「用孙宇晨的逻辑帮我拆这个两难」。</span></p>
+  <div class="cta" style="justify-content:flex-start">
+    <a class="btn primary" href="https://github.com/swaylq/sunge-skill">去 GitHub 看全部</a>
+  </div>
+</section>
+
+<footer>
+  孙宇晨 · 孙割.skill · 孙学 · 学《我的女友景甜》写小作文<br>
+  <span class="muted">本项目与孙宇晨本人、TRON、景甜及其团队无任何关联。分析基于其公开发表的文字，用于写作教学与研究。</span>
+</footer>
+
+</div>
+</body>
+</html>
