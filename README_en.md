@@ -11,7 +11,7 @@
 
 **Justin Sun (孙宇晨) · mind × writing × decisions · one skill for how "Sun-ge" thinks, writes, and decides**
 
-[中文 README](README.md) · [Install](#install) · [The three](#what-it-distills) · [How to use](#how-to-use) · [Decision case](#decision-case) · [Red lines](#red-lines)
+[中文 README](README.md) · [Install](#install) · [The three](#what-it-distills) · [How to use](#how-to-use) · [Decision case](#decision-case)
 
 </div>
 
@@ -80,17 +80,6 @@ He wasn't leaning on Claude for the math — that was already done. He was borro
 ## Examples
 
 Four ready-made ([`examples/`](examples/), in Chinese): [*My Gym Card*](examples/01-my-gym-card.md) (the voice on the most ordinary thing) · [*My First 100x Coin*](examples/02-my-first-100x.md) (from the fleeced side) · [a Sun-ge hype thread](examples/03-hype-thread.md) · [the fifty-million call](examples/04-decision-5000w.md) (decision mode).
-
-## Red lines
-
-This lives in the gap between "apparently true" and "labeled fiction" — half the essay's force comes from that ambiguity, so the skill holds a few lines hard:
-
-- Real people in **active disputes** (Sun v. Jing Tian, SEC v. Sun): only their public positions, ending with "this is fiction, any resemblance is coincidental," never asserted as fact.
-- No fabricated explicit sexual/reproductive/medical private facts about a real person as if true; no invented crimes for a living, identifiable person.
-- Decision mode gives "how someone like Justin Sun would judge it," **not investment/legal/medical advice** — it flags risk, it doesn't egg you on.
-- A style/mind mimicry tool for a wry smile or a chill down the spine — not for defamation, harassment, whitewashing, or verdicts. Output carries a disclaimer by default; loosen it when you write yourself, pure fiction, or self-parody.
-
-*Not affiliated with Justin Sun, TRON, Jing Tian, or their teams. All analysis is based on publicly published text, for writing instruction and research.*
 
 ## License
 
