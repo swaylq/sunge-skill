@@ -13,9 +13,17 @@ allowed-tools: Read, Write, Edit, WebSearch, WebFetch
 
 ## 这个 skill 干什么
 
-市面上已有的两个孙宇晨 skill（[sun-yuchen-perspective](https://github.com/alchaincyf/sun-yuchen-perspective)、[sun-skill](https://github.com/0xquqi/sun-skill)）蒸的是他的**决策思维**——心智模型、决策启发式，让你「像他一样想」。
+把孙宇晨这个人蒸成**三样东西，装在一起**：
 
-孙割蒸的是他的**文笔**加**决策**——让你「像他一样写」，也能把他「怎么做决定」抠出来用。头号样本是他 2026-08-27 发的《我的女友景甜》：一种极简、克制、把天价和心碎并置、结尾绝不升华的第一人称文体；这篇表面讲关系，底下埋着六个可单拎的决策（最出名的是让 Claude 拍板五千万那段）。给它一个题目，它回你一篇；给它一段故事或一个两难，它把决策抠出来。
+- **🧠 大脑**（他怎么看世界）——心智模型 + 世界观，`references/mind.md`
+- **✍️ 写作风格**（他怎么写）——《我的女友景甜》那套冷小作文，拆成 15 个写法，`references/style-dna.md`
+- **🎯 决策能力**（他怎么做决定）——从《景甜》抠出的 6 个关键决策 + 决策底册，`references/decisions.md`
+
+三样是焊在一起的：他小作文的冷，源头是「像 AI 一样减少情绪波动」那套大脑；他最出名的一次决策，是让 Claude 替他拍板五千万。给它一个题目，它用他的脑子、笔、决策逻辑一起产出；给它一段故事或一个两难，它抠决策、给判断。
+
+头号一手样本是 2026-08-27 那篇《我的女友景甜》（全文在 `references/jingtian-essay.md`）。
+
+前作参照：[sun-yuchen-perspective](https://github.com/alchaincyf/sun-yuchen-perspective)、[sun-skill](https://github.com/0xquqi/sun-skill) 把「大脑」做得深而全；孙割不比大脑厚度，比的是三样合一——尤其那两个都没覆盖的写作与「长在故事里的决策」。
 
 ## 三种用法（先分清用哪种）
 
@@ -30,12 +38,12 @@ allowed-tools: Read, Write, Edit, WebSearch, WebFetch
 ## 执行
 
 1. **判用法**：要一篇有后劲的故事 → 小作文体；要一条昂扬的推/通稿 → 发推体；要「提取/分析决策」或「用孙宇晨的逻辑帮我决策」 → 决策模式。
-2. **读料**：
-   - 必读 `references/style-dna.md`（15 个写法，这是文风的全部机关）
-   - 必读 `references/anti-cringe.md`（排雷 + AI 味自查，**去 AI 味的关键**）
-   - 按需 `references/voice-and-facts.md`（他的真生平/口头禅，织进去让篇子立住）
-   - 做决策模式，或想在小作文里埋决策时刻，读 `references/decisions.md`（六个从《景甜》抠出的决策 + 孙学决策底册）
-   - 对照 `references/jingtian-essay.md`（一手样本，仿写时开着它）
+2. **读料**（按用法取）：
+   - 写作必读 `references/style-dna.md`（15 个写法，文风的全部机关）+ `references/anti-cringe.md`（排雷 + AI 味自查，**去 AI 味的关键**）
+   - 决策模式、或想在小作文里埋决策时刻，读 `references/decisions.md`（6 个从《景甜》抠出的决策 + 孙学决策底册）
+   - 要「孙宇晨会怎么看 X」的视角、或想让篇子有他的思想底色，读 `references/mind.md`（🧠 大脑：心智模型 + 世界观 + 人设裂缝）
+   - 织真生平/口头禅让篇子立住，读 `references/voice-and-facts.md`
+   - 对照一手样本 `references/jingtian-essay.md`（仿写时开着它）
 3. **收真材料**：涉及真实人物/产品/事件，先用 WebSearch / WebFetch 查真数字、真专名、真时间线——**这套文风靠真东西吃饭**，编的数字一眼假。
 4. **按流程走**：小作文体走 `prompts/xiaozuowen.md` 的 6 步；发推体走 `prompts/hype.md`；决策提取/应用走 `prompts/decision.md`。
 5. 写完**过排雷清单**再交（`anti-cringe.md` + `style-dna.md` 末尾的自检表）。
@@ -65,10 +73,11 @@ sunge-skill/
 │   ├── hype.md                   # 发推/演讲体流程
 │   └── decision.md               # 决策提取/应用（孙学模式）
 ├── references/
-│   ├── style-dna.md              # 15 个写法，逐条带原文 + 怎么写 + 写歪长啥样
-│   ├── decisions.md              # 孙学·从《景甜》抠出的 6 个关键决策 + 决策底册
+│   ├── mind.md                   # 🧠 大脑：心智模型 + 世界观 + 人设裂缝
+│   ├── style-dna.md              # ✍️ 写作：15 个写法，逐条带原文 + 怎么写 + 写歪长啥样
+│   ├── decisions.md              # 🎯 决策：从《景甜》抠出的 6 个关键决策 + 决策底册
 │   ├── anti-cringe.md            # 翻车现场 + 去 AI 味自查 + 法律红线
-│   ├── voice-and-facts.md        # 孙宇晨真生平/口头禅/思维底色
+│   ├── voice-and-facts.md        # 孙宇晨真生平/口头禅
 │   └── jingtian-essay.md         # 《我的女友景甜》全文（一手样本）
 └── examples/                     # 用本 skill 写出来的样篇
 ```

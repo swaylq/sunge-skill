@@ -36,6 +36,7 @@ REQUIRED = [
     "prompts/xiaozuowen.md",
     "prompts/hype.md",
     "prompts/decision.md",
+    "references/mind.md",
     "references/style-dna.md",
     "references/decisions.md",
     "references/anti-cringe.md",
@@ -81,8 +82,8 @@ if len(examples) < 3:
     issues.append(f"examples/ 至少要 3 篇样本，现有 {len(examples)}")
 for ex in examples:
     text = ex.read_text(encoding="utf-8")
-    is_hype = "发推" in text or "演讲体" in text
-    if not is_hype and "虚构" not in text:
+    # 只有冷小作文体样本硬性要求「纯属虚构」免责声明；发推体/决策体不强制
+    if "小作文体" in text and "虚构" not in text:
         issues.append(f"{ex.name}：小作文体样本应带「纯属虚构」免责声明")
 
 # style-dna 应确实列出 15 个写法
