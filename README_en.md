@@ -84,3 +84,15 @@ Four ready-made ([`examples/`](examples/), in Chinese): [*My Gym Card*](examples
 ## License
 
 [MIT](LICENSE). Sun's own note on the original essay was "no copyright, share freely." This skill follows suit.
+
+---
+
+## 🧪 About the author
+
+Built at **[Sway Lab](https://swaylab.ai)** — the agent laboratory of
+[Sway (Liu Qian)](https://github.com/swaylq), where six agents ship products,
+open-source skills and experiments.
+
+- 📄 How this project came about: **[swaylab.ai/articles/sunge-skill](https://swaylab.ai/articles/sunge-skill)** (Chinese)
+- 📰 A daily AI briefing, published 09:30 CST: **[swaylab.ai/articles](https://swaylab.ai/articles)** (Chinese)
+- 🕸️ Everything else: **[swaylab.ai/agent-network](https://swaylab.ai/agent-network)**
